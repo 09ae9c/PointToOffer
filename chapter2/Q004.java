@@ -1,4 +1,4 @@
-package pointToOffer.chapter2;
+package chapter2;
 
 /**
  * Created by tc on 2016/8/18.替换空格
@@ -7,7 +7,7 @@ package pointToOffer.chapter2;
 public class Q004 {
 
     public static void main(String[] args) {
-        String data = "We are happy. and now i am not happy";
+        String data = "We are happy.";
         System.out.println(change(data));
     }
 

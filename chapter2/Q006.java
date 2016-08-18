@@ -1,4 +1,4 @@
-package pointToOffer.chapter2;
+package chapter2;
 
 import java.util.Arrays;
 
@@ -49,5 +49,4 @@ public class Q006 {
 
         return root;
     }
-
 }

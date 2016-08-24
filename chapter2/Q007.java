@@ -7,27 +7,43 @@ import structure.Stack;
  */
 public class Q007 {
 
-    private static Stack<Integer> stackA;
-    private static Stack<Integer> stackB;
+    private static class CQueue {
+        private Stack<Integer> stackA;
+        private Stack<Integer> stackB;
 
-    public Q007(){
-        stackA=new Stack<>();
-        stackB=new Stack<>();
+        public CQueue() {
+            stackA = new Stack<>();
+            stackB = new Stack<>();
+        }
+
+        public void appendTail(int item) {
+            stackA.push(item);
+        }
+
+        public int deleteHead() {
+            if (stackB.size() <= 0) {
+                while (stackA.size() > 0) {
+                    stackB.push(stackA.pop());
+                }
+            }
+
+            if (stackB.size() == 0) {
+                return 0;
+            }
+            return stackB.pop();
+        }
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        CQueue cq = new CQueue();
+        for (int i = 0; i < 10; i++) {
+            cq.appendTail(i);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(cq.deleteHead());
+        }
 
     }
-
-
-    public static void appendTail(int item){
-        stackA.push(item);
-    }
-
-    public static void deleteHead(){
-
-    }
-
-
 }

@@ -1,7 +1,7 @@
 package structure;
 
 /**
- * Created by tc on 2016/8/22. 栈--链表方式
+ * Created by tc on 2016/8/22. 链表实现的栈
  */
 public class Stack<T> {
 
@@ -32,7 +32,7 @@ public class Stack<T> {
         size = 0;
     }
 
-    public int length() {
+    public int size() {
         return size;
     }
 

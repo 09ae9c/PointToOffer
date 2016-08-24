@@ -14,7 +14,7 @@ public class Q003 {
                 {6, 8, 11, 15}};
 
         System.out.println("find 7 ? " + find(matrix, 4, 4, 7));
-        System.out.println("find 3 ? " + find(matrix,4,4,3));
+        System.out.println("find 3 ? " + find(matrix, 4, 4, 3));
     }
 
 

@@ -44,6 +44,5 @@ public class Q007 {
         for (int i = 0; i < 10; i++) {
             System.out.println(cq.deleteHead());
         }
-
     }
 }

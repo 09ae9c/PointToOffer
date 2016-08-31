@@ -21,51 +21,36 @@ public class Q012 {
 
     /**
      * 由于需要考虑大数的处理,就不能使用 int 或 其它整型数据类型存放,因此用字符数组来存放每一位的数字
-     * 接下来不断的进行模拟加法和打印数字这两个操作
+     * 接下来利用全排列的思想,组合所有可能的位数
      */
     private static void print1ToMaxNDigits(int n) {
-        if (n <= 0) {
+
+        if (n<=0){
             return;
         }
+        char[] number=new char[n];
 
-        char[] number = new char[n];
-
-        for (int i = 0; i < number.length; i++) {//初始化字符串数组
-            number[i] = '0';
+        for (int i=0;i<number.length;i++){//初始化字符串数组
+            number[i]='0';
         }
 
-        while (!increment(number)) {
-            printNumber(number);
+        for (int i=0;i<10;i++){
+            number[0]= (char) (i+'0');
+            print1ToMaxOfNDigitsRecursively(number,0);
         }
     }
 
-    /**
-     * 对数字模拟加法运算
-     */
-    private static boolean increment(char[] number) {
-        boolean isOverflow = false;
-        int nTakeOver = 0;
-        int nLength = number.length;
 
-        for (int i = nLength - 1; i >= 0; i--) {
-            int mSum = number[i] - '0' + nTakeOver;
-            if (i == nLength - 1) {
-                mSum++;
-            }
-            if (mSum >= 10) {
-                if (i == 0) {
-                    isOverflow = true;
-                } else {
-                    mSum -= 10;
-                    nTakeOver = 1;
-                    number[i] = (char) ('0' + mSum);
-                }
-            } else {
-                number[i] = (char) ('0' + mSum);
-                break;
-            }
+    private static void print1ToMaxOfNDigitsRecursively(char[] number,int index){
+        int length=number.length;
+        if (index==length-1){
+            printNumber(number);
+            return;
         }
-        return isOverflow;
+        for (int i=0;i<10;i++){
+            number[index+1]= (char) (i+'0');
+            print1ToMaxOfNDigitsRecursively(number,index+1);
+        }
     }
 
     /**

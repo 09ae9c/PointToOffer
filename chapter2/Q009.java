@@ -4,9 +4,9 @@ package chapter2;
  * Created by tc on 2016/8/23.斐波那契数列
  * 写一个函数，输入 n，求斐波那契数列的第 n 项
  * 公式：
- * { 0 (n=0)
+ *        { 0 (n=0)
  * f(n) = { 1 (n=1)
- * { f(n-1) + f(n-2)
+ *        { f(n-1) + f(n-2)
  */
 public class Q009 {
 

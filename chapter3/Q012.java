@@ -41,6 +41,9 @@ public class Q012 {
     }
 
 
+    /**
+     * 递归实现循环打印
+     */
     private static void print1ToMaxOfNDigitsRecursively(char[] number,int index){
         int length=number.length;
         if (index==length-1){

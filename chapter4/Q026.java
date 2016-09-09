@@ -16,7 +16,6 @@ public class Q026 {
             this.next=null;
             this.sibling=null;
         }
-
     }
 
 

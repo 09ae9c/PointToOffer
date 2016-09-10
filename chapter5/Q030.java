@@ -25,6 +25,11 @@ public class Q030 {
      * 这里用的 ArrayList 来实现,还可以用 "最大堆" 这种数据结构来实现
      */
     private static void findLeastNumbers(int[] numbers, int k) {
+
+        if (numbers == null || numbers.length <= 0) {
+            return;
+        }
+
         List<Integer> leastArray = new ArrayList<>(k);
 
         for (Integer i : numbers) {
